@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="icon" type="image/png" href="../assets/delivery-truck.png" />
+    <title>Contacto - ServiceCargue</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="nav-placeholder"></div>
+
+      <!-- Hero Section para Contacto -->
+      <section class="contact-hero">
+        <div class="contact-hero__container">
+          <div class="contact-hero__content">
+            <h1><span>Contáctanos</span> Hoy</h1>
+            <p>Estamos aquí para ayudarte con todas tus necesidades logísticas. Obtén una cotización personalizada en menos de 24 horas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Principal de Contacto -->
+      <section class="contact-main">
+        <div class="contact-main__container">
+          
+          <!-- Información de Contacto -->
+          <div class="contact-info">
+            <h2>Información de <span>Contacto</span></h2>
+            <div class="contact-info__grid">
+              
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Ubicación</h4>
+                  <p>Mamonal, Provincia de Cartagena<br>Bolívar, Colombia</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Teléfono</h4>
+                  <p>+57 (5) 234-5678<br>+57 300 123 4567</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Email</h4>
+                  <p>info@servicecargue.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="ri-time-line"></i>
+                </div>
+                <div class="contact-details">
+                  <h4>Horarios</h4>
+                  <p>Lunes - Viernes: 7:00 AM - 6:00 PM<br>Sábados: 8:00 AM - 2:00 PM</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Formulario de Contacto -->
+          <div class="contact-form">
+            <h2>Solicitar <span>Cotización</span></h2>
+            <form id="contactForm" class="form">
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">Nombre *</label>
+                  <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Apellidos *</label>
+                  <input type="text" id="lastName" name="lastName" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Teléfono *</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="company">Empresa</label>
+                <input type="text" id="company" name="company">
+              </div>
+
+              <div class="form-group">
+                <label for="service">Servicio Requerido *</label>
+                <select id="service" name="service" required>
+                  <option value="">Seleccionar servicio...</option>
+                  <option value="embalaje">Embalaje Profesional</option>
+                  <option value="cargue">Cargue de Paquetes</option>
+                  <option value="descargue">Descargue de Paquetes</option>
+                  <option value="completo">Servicio Completo (Embalaje + Cargue + Descargue)</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="origin">Ciudad de Origen *</label>
+                  <input type="text" id="origin" name="origin" required placeholder="Ej: Cartagena">
+                </div>
+                <div class="form-group">
+                  <label for="destination">Ciudad de Destino *</label>
+                  <input type="text" id="destination" name="destination" required placeholder="Ej: Bogotá">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="weight">Peso Aproximado (kg)</label>
+                  <input type="number" id="weight" name="weight" placeholder="Ej: 50">
+                </div>
+                <div class="form-group">
+                  <label for="urgency">Urgencia</label>
+                  <select id="urgency" name="urgency">
+                    <option value="normal">Normal (3-5 días)</option>
+                    <option value="express">Express (1-2 días)</option>
+                    <option value="urgent">Urgente (Mismo día)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Detalles del Servicio *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Describe los detalles de tu solicitud, tipo de mercancía, dimensiones especiales, instrucciones particulares, etc."></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  <i class="ri-send-plane-line"></i>
+                  Enviar Solicitud
+                </button>
+                <button type="reset" class="btn btn-secondary">
+                  <i class="ri-refresh-line"></i>
+                  Limpiar Formulario
+                </button>
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Sección de Respuesta Rápida -->
+      <section class="contact-features">
+        <div class="contact-features__container">
+          <h2>¿Por qué elegirnos para tu <span>logística</span>?</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="ri-timer-flash-line"></i>
+              </div>
+              <h4>Respuesta Inmediata</h4>
+              <p>Te contactamos en menos de 2 horas después de recibir tu solicitud</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="ri-calculator-line"></i>
+              </div>
+              <h4>Costo Económico</h4>
+              <p>Te ofrecemos tarifas competitivas y accesibles para tu proyecto logístico</p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="ri-award-line"></i>
+              </div>
+              <h4>Calidad Garantizada</h4>
+              <p>Más de 5 años de experiencia respaldando nuestro servicio profesional</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div id="footer-placeholder"></div>
+    
+    <script src="../js/index.js"></script>
+    <script src="../js/contact.js"></script>
+  </body>
+</html>
