@@ -464,13 +464,14 @@ nav {
 
 .mission-vision__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
   align-items: stretch;
 }
 
 .mission-card,
-.vision-card {
+.vision-card,
+.objective-card {
   background: var(--white);
   border-radius: 20px;
   padding: 2.5rem;
@@ -481,7 +482,8 @@ nav {
 }
 
 .mission-card:hover,
-.vision-card:hover {
+.vision-card:hover,
+.objective-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
@@ -506,8 +508,19 @@ nav {
   background: linear-gradient(90deg, var(--primary-color-dark), var(--primary-color));
 }
 
+.objective-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-color-dark));
+}
+
 .mission-card__header,
-.vision-card__header {
+.vision-card__header,
+.objective-card__header {
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -515,7 +528,8 @@ nav {
 }
 
 .mission-icon,
-.vision-icon {
+.vision-icon,
+.objective-icon {
   width: 60px;
   height: 60px;
   background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
@@ -527,13 +541,15 @@ nav {
 }
 
 .mission-icon i,
-.vision-icon i {
+.vision-icon i,
+.objective-icon i {
   font-size: 1.8rem;
   color: var(--white);
 }
 
 .mission-card__header h2,
-.vision-card__header h2 {
+.vision-card__header h2,
+.objective-card__header h2 {
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
@@ -542,7 +558,8 @@ nav {
 }
 
 .mission-card__content p,
-.vision-card__content p {
+.vision-card__content p,
+.objective-card__content p {
   font-size: 1.1rem;
   color: var(--text-light);
   line-height: 1.8;
@@ -558,24 +575,28 @@ nav {
   }
   
   .mission-card,
-  .vision-card {
+  .vision-card,
+  .objective-card {
     padding: 2rem;
   }
   
   .mission-card__header,
-  .vision-card__header {
+  .vision-card__header,
+  .objective-card__header {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
   
   .mission-card__header h2,
-  .vision-card__header h2 {
+  .vision-card__header h2,
+  .objective-card__header h2 {
     font-size: 1.8rem;
   }
   
   .mission-card__content p,
-  .vision-card__content p {
+  .vision-card__content p,
+  .objective-card__content p {
     text-align: center;
     font-size: 1rem;
   }
@@ -627,11 +648,25 @@ nav {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid #e9ecef;
+  position: relative;
 }
 
 .client__card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.client__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.client__link:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 .client__logo {
@@ -643,6 +678,11 @@ nav {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.client__card:hover .client__logo {
+  background-color: var(--primary-color-dark);
 }
 
 .client__logo i {
@@ -655,11 +695,17 @@ nav {
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.client__card:hover h4 {
+  color: var(--primary-color);
 }
 
 .client__card p {
   color: var(--text-light);
   font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 /* === RESPONSIVE DESIGN === */
