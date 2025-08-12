@@ -451,6 +451,136 @@ nav {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* === MISSION & VISION SECTION === */
+.mission-vision {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.mission-vision__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-vision__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.mission-card,
+.vision-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.mission-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-color-dark));
+}
+
+.vision-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color-dark), var(--primary-color));
+}
+
+.mission-card__header,
+.vision-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mission-icon,
+.vision-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-dark));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mission-icon i,
+.vision-icon i {
+  font-size: 1.8rem;
+  color: var(--white);
+}
+
+.mission-card__header h2,
+.vision-card__header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.mission-card__content p,
+.vision-card__content p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin: 0;
+  text-align: justify;
+}
+
+/* Responsive para Mission & Vision */
+@media (max-width: 768px) {
+  .mission-vision__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .mission-card,
+  .vision-card {
+    padding: 2rem;
+  }
+  
+  .mission-card__header,
+  .vision-card__header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .mission-card__header h2,
+  .vision-card__header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .mission-card__content p,
+  .vision-card__content p {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
 /* === CLIENTS SECTION === */
 .clients {
   padding: 4rem 1rem;
